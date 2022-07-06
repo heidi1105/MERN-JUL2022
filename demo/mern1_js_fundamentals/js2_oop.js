@@ -15,6 +15,7 @@ class Developer{
     }
 
     completeProject(title){
+        
         // console.log("Completing a project named "+title)
         console.log(`${this.name} completed a project named ${title}`)
         this.health -= 15
@@ -43,3 +44,5 @@ console.log(dev2)
 const junDev = new JuniorDeveloper()
 junDev.completeProject("Random number generator")
 console.log(junDev)
+
+
