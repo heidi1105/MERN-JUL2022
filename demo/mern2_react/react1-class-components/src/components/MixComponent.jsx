@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 
 // define class
-export class StateComponent extends Component {
+export class MixComponent extends Component {
     constructor(props){
         super(props)
         this.state ={
@@ -12,9 +12,6 @@ export class StateComponent extends Component {
     }
 
     render() {
-        const alert2 = (message) => {
-            alert(message)
-        }
 
         const addLikes = () =>{
             this.setState({
@@ -24,24 +21,22 @@ export class StateComponent extends Component {
 
         return (
             <fieldset>
-                <legend> StateComponent.jsx</legend>
+                <legend> MixComponent.jsx</legend>
                 <h1> State demo</h1>
-                <button onClick={() => alert("Hi")}> Alert me!</button> | 
-                <button onClick={() => alert2("alert message")}> Alert test 2</button>
-                <p>
+                 <p>
                     <button onClick={()=>this.setState({count: this.state.count+1})}> Add count</button>
                     <button onClick={()=>addLikes()}> Add likes</button>
                 </p>
                 <h1> Count: {this.state.count}</h1>
-                <h1> Likes: {this.state.likes}</h1>
-
+                <h1> Likes from state: {this.state.likes}</h1>
+                <h1> Likes from props: {this.props.likes}</h1>
             </fieldset>
         )
     }
 }
 
 // export the class
-export default StateComponent
+export default MixComponent
 
 // not COUNT++
 // count = count+1

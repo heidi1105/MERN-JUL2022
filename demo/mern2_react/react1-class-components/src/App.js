@@ -1,12 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 import PropsComponent from './components/PropsComponent'
-import { StateComponent } from './components/StateComponent';
+import  StateComponent from './components/StateComponent';
+import MixComponent from './components/MixComponent';
+import StylingComponent from './components/StylingComponent';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <h1> TV Shows </h1>
+        <StylingComponent />
+
+
+        {/* <MixComponent likes ={200}/>
         <StateComponent />
 
         <PropsComponent 
@@ -15,7 +21,7 @@ function App() {
           isRecommended={true} 
           hashtags={["scary", "superpower"]} 
         />
-        <PropsComponent title="Umbrella Academy" episodes={30} isRecommended={false} hashtags={["First 2 seasons are great", "superpower"]} />
+        <PropsComponent title="Umbrella Academy" episodes={30} isRecommended={false} hashtags={["First 2 seasons are great", "superpower"]} /> */}
 
     </div>
   );
