@@ -17,10 +17,6 @@ const Form1 = () => {
             <p>
                 <label> Username: </label>
                 <input type="text" name="username" onChange={(e)=>setUsername(e.target.value)} value={username}/>
-                {
-                    username.length < 5?
-                    <span style={{color:"red"}}>The username needs to be at least 5 characters</span>:""
-                }
             </p>
             <p>
                 <label> Age: </label>
