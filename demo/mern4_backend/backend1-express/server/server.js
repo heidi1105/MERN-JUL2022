@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
 
+
 // temporary database
 const users = [
     { firstName: "Reimu",  lastName: "Hakurei"    },
@@ -10,7 +11,7 @@ const users = [
     { firstName: "Momiji", lastName: "Inubashiri" }
 ];
 
-// express configure
+// express configure - allows POST 
 app.use( express.json() );
 // recognize JSON Object
 app.use( express.urlencoded({ extended: true }) );
@@ -18,7 +19,7 @@ app.use( express.urlencoded({ extended: true }) );
 
 
 
-// Read --- GET
+// Read ALL --- GET ALL
 // app.get --> takes 2 arguments: (path, function (request, response))
 app.get("/api/users", (req, res)=>{
     // request: what is received from this call
