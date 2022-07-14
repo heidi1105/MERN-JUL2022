@@ -8,7 +8,7 @@
 1. run the first command to get the PID of the port
 2. kill the port with the PID. 
 
-### Mac/Linux
+#### Mac/Linux
  to getting the background process and find the PID
 ```
 lsof -i:8000 
@@ -21,7 +21,7 @@ kill -9 <PID>
 
 
 
-### Windows
+#### Windows
  to getting the background process and find the PID
 ```
 netstat -ano | findstr :8000
