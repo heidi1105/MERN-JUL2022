@@ -6,11 +6,18 @@
 
 ## To kill a running port
 
-MAC
+Mac/Linux
+
+Run 
 ```
-lsof -i:8000 — getting the background process
+lsof -i:8000 
+```
+to getting the background process and find the PID
+
+```
 kill -9 <PID>
 ```
+Replace <PID> to the PID you found on the last command
 
 
 Windows
