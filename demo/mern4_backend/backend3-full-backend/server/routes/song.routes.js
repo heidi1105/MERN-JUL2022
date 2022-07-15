@@ -7,4 +7,6 @@ module.exports = (app)=>{
     app.post("/api/songs", SongController.addSong)
     app.put("/api/songs/:id", SongController.updateSong)
     app.delete("/api/songs/:id", SongController.deleteSong)
+    app.get("/api/artists/:artist", SongController.songsByArtist)
+    app.post("/api/songs2", SongController.addSong2)
 }

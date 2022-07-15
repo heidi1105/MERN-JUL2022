@@ -6,8 +6,16 @@ const SongSchema = new mongoose.Schema({
         required : [true, "Title is required"],
         minlength: [3, "Title must be at least 3 characters"]
     },
-    artist: String,
-    rating: Number
+    artist: {
+        type: String,
+        required: [true, "Artist is required"],
+        minlength: [3,"Artist must be at least 3 characters"]
+    },
+    rating: {
+        type: Number,
+        min: [0, "Rating must be positive"],
+        max: [10, "Max rating is 10"]
+    }
 }, {timestamps: true})
 
 module.exports = mongoose.model('Song', SongSchema)

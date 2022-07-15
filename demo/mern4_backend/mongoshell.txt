@@ -4,3 +4,8 @@ db.item.insertOne({name: "Justin Bieber CD", price: 20, size:{length: 5, height:
 db.item.find({name: 'TV'})
 
 db.item.findOne({name: 'TV'})
+
+db.item.insertMany([
+    {name: "Red Gaming Chair", price: 500, size:{length: 10, height: 10}},
+    {name: "Soup Dumpling", price: 4, size:{length: 1, height: 1}}
+])
