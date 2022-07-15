@@ -9,3 +9,29 @@ db.item.insertMany([
     {name: "Red Gaming Chair", price: 500, size:{length: 10, height: 10}},
     {name: "Soup Dumpling", price: 4, size:{length: 1, height: 1}}
 ])
+
+db.item.find({price : { $lt: 100}})
+
+find all TVs with the price less than 800 
+
+db.item.find({$and : [
+    {name: 'TV'},
+    {price: {$lt: 800}}
+]})
+
+
+db.item.updateMany({}, {$addToSet: {shops: 'Amazon' }})
+
+db.item.updateMany({}, {$addToSet: {shops: 'Walmart' }})
+
+db.item.updateMany({}, {$addToSet: {shops: { $each: ["BestBuy", "TraderJoes"]} }})
+
+db.item.updateMany({name: 'TV' }, {$inc: {price: 1}})
+
+db.item.updateMany({}, {$pull: {shops: 'TraderJoes'}})
+
+db.item.updateMany({}, {$push: {shops: 'Amazon' }})
+
+db.item.updateMany({}, {$pull: {shops: 'Amazon' }})
+
+db.item.updateMany({}, [{$unset: ['size', 'price']}])
