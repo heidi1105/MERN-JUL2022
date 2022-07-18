@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
+import {Link} from "react-router-dom"
 
 // 1. grab info on load (axios + useEffect)
 // 2. store info with useState
 
-const DisplayTable = () => {
-    // all songs : array of objects [{title:...}, {}, {}]
-    const [songlist, setSonglist] = useState([])
+const DisplayTable = (props) => {
 
-    useEffect(()=>{
-        axios.get(`http://localhost:8000/api/songs`)
-            .then(res=>setSonglist(res.data))
-            .catch(err=>console.log(err))
-    },[])
 
     return (
         <fieldset>
@@ -27,12 +21,13 @@ const DisplayTable = () => {
                 </thead>
                 <tbody>
                     {
-                        songlist.map((song, i)=>{
+                        props.songlist.map((song, i)=>{
                             return(
-                                <tr>
-                                    <td> {song.title}</td>
+                                <tr key={i}>
+                                    <td><Link to={`/songs/${song._id}`}> {song.title}</Link></td>
                                     <td> {song.artist}</td>
                                     <td> {song.rating}</td>
+                                    <td> <Link to={`/songs/${song._id}/edit`}> Edit</Link></td>
                                 </tr>
                             )
                         })

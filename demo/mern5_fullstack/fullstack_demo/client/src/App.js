@@ -6,6 +6,8 @@ import CreatePage from './views/CreatePage';
 import Details from './views/Details';
 import UpdatePage from './views/UpdatePage';
 import TestPage from './views/TestPage';
+import Main from './views/Main';
+import Main2 from './views/Main2';
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
       </p>
 
       <Routes>
-      <Route path="/test" element={<TestPage />} />
+        <Route path="/test" element={<TestPage />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/main2" element={<Main2 />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/songs/new" element={<CreatePage />} />
         <Route path="/songs/:id" element={<Details />} />
