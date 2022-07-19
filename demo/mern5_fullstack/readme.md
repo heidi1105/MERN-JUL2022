@@ -34,5 +34,5 @@
 
 ## BLACK BELT
 1. We don't talk about black belt features
-2. Given several black belt, only attempt 2 of all. 
+2. Given several black belt features, able to attempt 2 of them. 
 3. Deploy within 24 hours of starting the exam
