@@ -1,4 +1,8 @@
-const Song = require("./../models/song.model")
+// option1 
+// const Song = require("./../models/song.model")
+
+// option 2
+const {Song} = require("./../models/song.model")
 
 module.exports.testApi = (req, res) => {
     res.json({ status: "ok" })

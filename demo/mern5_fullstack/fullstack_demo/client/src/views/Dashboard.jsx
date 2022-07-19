@@ -11,6 +11,15 @@ const Dashboard = () => {
           .catch(err=>console.log(err))
   },[])
 
+  const removeFromList = (deleteId) =>{
+    const filteredList = songlist.filter((eachSong, i)=>{
+      return(
+        eachSong._id !== deleteId
+      )
+    })
+    setSonglist(filteredList)
+  }
+
 
   return (
     <fieldset>
@@ -18,7 +27,7 @@ const Dashboard = () => {
         <h1> Dashboard </h1> 
         {
           songlist?
-          <DisplayTable songlist={songlist}/>:
+          <DisplayTable songlist={songlist} updateList={removeFromList}/>:
           <h1> No songs now</h1>
         }
         

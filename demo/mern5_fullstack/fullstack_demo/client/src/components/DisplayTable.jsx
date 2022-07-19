@@ -7,7 +7,14 @@ import {Link} from "react-router-dom"
 
 const DisplayTable = (props) => {
 
+    const handleDelete = (deleteId) =>{
+        // 1. delete the item from the database
+        // 2. update the list at the parent
+        axios.delete(`http://localhost:8000/api/songs/${deleteId}`)
+            .then(res=>props.updateList(deleteId))
+            .catch(err=>console.log(err))
 
+    }
     return (
         <fieldset>
             <legend> DisplayTable.jsx</legend>
@@ -28,6 +35,7 @@ const DisplayTable = (props) => {
                                     <td> {song.artist}</td>
                                     <td> {song.rating}</td>
                                     <td> <Link to={`/songs/${song._id}/edit`}> Edit</Link></td>
+                                    <td> <button onClick={()=>handleDelete(song._id)}> Delete</button></td>
                                 </tr>
                             )
                         })
