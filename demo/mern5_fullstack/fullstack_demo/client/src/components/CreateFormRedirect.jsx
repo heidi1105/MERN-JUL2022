@@ -10,6 +10,7 @@ const CreateFormRedirect = () => {
     const [title, setTitle] = useState("")
     const [artist, setArtist] = useState("")
     const [rating, setRating] = useState(5)
+    const [errors, setErrors] = useState([])
 
     const navigate = useNavigate()
 
@@ -17,8 +18,15 @@ const CreateFormRedirect = () => {
         e.preventDefault()
         // post the new song to the backend
         axios.post(`http://localhost:8000/api/songs`, {title, artist, rating})
-            .then(res=>navigate("/dashboard"))
-            .catch(err=>console.log(err))
+            .then(res=>navigate("/dashboard")) // SUCCESSFUL
+            .catch(err=>{
+                const errMsgArr =[]
+                const errResponse = err.response.data.errors
+                for(const eachKey in errResponse){
+                    errMsgArr.push(errResponse[eachKey].message)
+                }
+                setErrors(errMsgArr)
+            }) // UNSUCCESSFULL
     }
 
     return (
@@ -39,6 +47,13 @@ const CreateFormRedirect = () => {
                 </div>
                 <button type="submit"> Create new song</button>
             </form>
+            {
+                errors.map((err, i)=>{
+                    return(
+                        <p style={{color: "red"}} key={i}> {err}</p>
+                    )
+                })
+            }
         </fieldset>
     )
 }
