@@ -19,7 +19,7 @@
 2. Communicating with your cohort during the exam
 
 ## Asking for help
-1. Ask for help in discord channel (ping me & Christian)
+1. Ask for help in discord channel (ping me & Christian & Winter)
 
 ## Getting Graded
 1. Have your red belt features graded first
@@ -34,4 +34,5 @@
 
 ## BLACK BELT
 1. We don't talk about black belt features
-2. Deploy within 24 hours of starting the exam
+2. Given several black belt, only attempt 2 of all. 
+3. Deploy within 24 hours of starting the exam
